@@ -10,7 +10,7 @@ Deletes untagged Docker images from GitHub packages.
 
 ## `personal-account`
 
-Set to `true` if you are running this action against [personal account][github-account-types] packages. Defaults to [organization account][github-account-types] packages.
+Set to `true` if you are running this action against [personal account](https://docs.github.com/en/get-started/learning-about-github/types-of-github-accounts#personal-accounts) packages. Defaults to [organization account](https://docs.github.com/en/get-started/learning-about-github/types-of-github-accounts#organization-accounts) packages.
 
 ## `repository`
 
@@ -35,7 +35,6 @@ The following references were used for building this action:
 1. [Permissions for the GITHUB_TOKEN][github-token-permissions]
 1. [Granting additional permissions][github-granting-additional-permissions]
 
-[github-account-types]: https://docs.github.com/en/get-started/learning-about-github/types-of-github-accounts
 [github-context]: https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
 [github-granting-additional-permissions]: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#granting-additional-permissions
 [github-token-permissions]: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
