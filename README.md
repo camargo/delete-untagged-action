@@ -24,7 +24,7 @@ with:
   github-token: ${{ secrets.DELETE_PACKAGES_TOKEN }}
 ```
 
-Note the `DELETE_PACKAGES_TOKEN` was created by following the [Granting additional permissions documentation][github-granting-additional-permissions] since you need to use a token that has the `delete:packages` permission.
+Note the `DELETE_PACKAGES_TOKEN` was created by following the [Granting Additional Permissions documentation][github-granting-additional-permissions] since you need to use a token that has the `delete:packages` permission.
 
 ## References
 
