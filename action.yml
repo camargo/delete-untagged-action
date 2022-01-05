@@ -1,5 +1,8 @@
 name: Delete Untagged Docker Images
 description: Deletes untagged Docker images from GitHub packages.
+branding:
+  color: red
+  icon: file-minus
 inputs:
   github-token:
     description: A GitHub token with the 'delete:packages' permission.
@@ -13,5 +16,5 @@ inputs:
     description: The owner and repository name. For example, 'Codertocat/Hello-World'.
     required: false
 runs:
-  using: 'node16'
-  main: 'main.js'
+  using: node16
+  main: main.js
