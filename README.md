@@ -2,6 +2,16 @@
 
 Deletes untagged Docker images from GitHub packages.
 
+## Usage
+
+```yaml
+uses: camargo/delete-untagged-docker-images-action@v1
+with:
+  github-token: ${{ secrets.DELETE_PACKAGES_TOKEN }}
+```
+
+Note the `DELETE_PACKAGES_TOKEN` was created by following the [Granting Additional Permissions][github-granting-additional-permissions] documentation since you need to use a token that has the `delete:packages` permission.
+
 ## Inputs
 
 ## `github-token`
@@ -16,16 +26,6 @@ Set to `true` if you are running this action against [personal account](https://
 
 The owner and repository name. For example, `Codertocat/Hello-World`. Defaults to the [github.repository][github-context] context variable.
 
-## Example Usage
-
-```yaml
-uses: camargo/delete-untagged-docker-images-action@v1
-with:
-  github-token: ${{ secrets.DELETE_PACKAGES_TOKEN }}
-```
-
-Note the `DELETE_PACKAGES_TOKEN` was created by following the [Granting Additional Permissions documentation][github-granting-additional-permissions] since you need to use a token that has the `delete:packages` permission.
-
 ## References
 
 The following references were used for building this action:
@@ -38,3 +38,7 @@ The following references were used for building this action:
 [github-context]: https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
 [github-granting-additional-permissions]: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#granting-additional-permissions
 [github-token-permissions]: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+
+## License
+
+The scripts and documentation in this project are released under the [MIT License](LICENSE)

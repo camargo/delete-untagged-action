@@ -1,5 +1,13 @@
 {
   "name": "delete-untagged-docker-images-action",
+  "version": "1.0.0",
+  "description": "Deletes untagged Docker images from GitHub packages.",
+  "license": "MIT",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/camargo/delete-untagged-docker-images-action.git"
+  },
   "dependencies": {
     "@actions/core": "^1.6.0",
     "@actions/github": "^5.0.0"
