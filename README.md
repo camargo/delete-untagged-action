@@ -41,4 +41,4 @@ The following references were used for building this action:
 
 ## License
 
-The scripts and documentation in this project are released under the [MIT License](LICENSE)
+The scripts and documentation in this project are released under the [MIT License](LICENSE).
