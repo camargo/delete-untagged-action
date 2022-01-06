@@ -23,9 +23,9 @@ async function main() {
           const { id } = version;
           const delUrl = `DELETE /${accountType}/${owner}/packages/container/${repo}/versions/${id}`;
           await github.request(delUrl);
-          console.log(`successfully deleted container: ${repository} (${id})`);
+          console.log(`successfully deleted image: ${repository} (${id})`);
         } catch (error) {
-          console.log(`failed to delete container: ${repository} (${id})`);
+          console.log(`failed to delete image: ${repository} (${id})`);
           core.setFailed(error.message);
         }
       }
