@@ -1,5 +1,5 @@
-name: Delete Untagged Docker Images
-description: Deletes untagged Docker images from GitHub packages.
+name: Delete Untagged
+description: Deletes untagged container versions from GitHub packages.
 branding:
   color: red
   icon: file-minus

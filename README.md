@@ -1,11 +1,11 @@
-# Delete Untagged Docker Images Action
+# Delete Untagged Action
 
-Deletes untagged Docker images from GitHub packages.
+Deletes all untagged container (e.g. Docker image) versions from GitHub packages.
 
 ## Usage
 
 ```yaml
-uses: camargo/delete-untagged-docker-images-action@v1
+uses: camargo/delete-untagged-action@v1
 with:
   github-token: ${{ secrets.DELETE_PACKAGES_TOKEN }}
 ```
