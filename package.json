@@ -1,7 +1,7 @@
 {
   "name": "delete-untagged-action",
   "version": "1.0.0",
-  "description": "Deletes untagged container versions from GitHub packages.",
+  "description": "Deletes all untagged container (e.g. Docker image) versions from GitHub packages.",
   "license": "MIT",
   "main": "main.js",
   "repository": {
