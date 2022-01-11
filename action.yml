@@ -1,5 +1,5 @@
 name: Delete Untagged
-description: Deletes all untagged container (e.g. Docker image) versions from GitHub packages.
+description: Deletes all untagged image versions from the GitHub Packages container registry.
 branding:
   color: red
   icon: file-minus
@@ -7,6 +7,9 @@ inputs:
   github-token:
     description: A GitHub token with the 'delete:packages' permission.
     required: true
+  package-name:
+    description: Override the package name that contains the untagged versions you want to delete.
+    required: false
   personal-account:
     default: false
     description: Set to true if you are running this action against a personal account package.

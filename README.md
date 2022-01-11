@@ -1,6 +1,6 @@
 # Delete Untagged Action
 
-Deletes all untagged container (e.g. Docker image) versions from GitHub packages.
+Deletes all untagged image versions from the [GitHub Packages][github-packages] container registry.
 
 ## Usage
 
@@ -17,6 +17,10 @@ Note the `DELETE_PACKAGES_TOKEN` was created by following the [Granting Addition
 ## `github-token`
 
 **Required** A GitHub token with the `delete:packages` permission. The [GITHUB_TOKEN][github-token-permissions] does not have this permission.
+
+## `package-name`
+
+Override the package name that contains the untagged versions you want to delete. Defaults to the [github.repository][github-context] context variable `repository name` portion.
 
 ## `personal-account`
 
@@ -37,6 +41,7 @@ The following references were used for building this action:
 
 [github-context]: https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
 [github-granting-additional-permissions]: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#granting-additional-permissions
+[github-packages]: https://github.com/features/packages
 [github-token-permissions]: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
 
 ## License

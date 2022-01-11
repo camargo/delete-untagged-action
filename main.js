@@ -4,13 +4,15 @@ const { getOctokit } = require('@actions/github');
 async function main() {
   try {
     const token = core.getInput('github-token', { required: true });
+    const packageName = core.getInput('package-name');
     const personalAccount = core.getInput('personal-account');
     const repository = core.getInput('repository');
     const github = getOctokit(token);
 
     const accountType = personalAccount ? 'users' : 'orgs';
     const [owner, repo] = repository.split('/');
-    const getUrl = `GET /${accountType}/${owner}/packages/container/${repo}/versions`;
+    const package = packageName || repo;
+    const getUrl = `GET /${accountType}/${owner}/packages/container/${package}/versions`;
     const { data: versions } = await github.request(getUrl);
 
     for (const version of versions) {
@@ -21,11 +23,15 @@ async function main() {
       if (!tags.length) {
         try {
           const { id } = version;
-          const delUrl = `DELETE /${accountType}/${owner}/packages/container/${repo}/versions/${id}`;
+          const delUrl = `DELETE /${accountType}/${owner}/packages/container/${package}/versions/${id}`;
           await github.request(delUrl);
-          console.log(`successfully deleted container: ${repository} (${id})`);
+          console.log(
+            `successfully deleted untagged image version: ${package} (${id})`,
+          );
         } catch (error) {
-          console.log(`failed to delete container: ${repository} (${id})`);
+          console.log(
+            `failed to delete untagged image version: ${package} (${id})`,
+          );
           core.setFailed(error.message);
         }
       }
