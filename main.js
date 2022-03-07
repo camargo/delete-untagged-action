@@ -25,12 +25,15 @@ async function main() {
       if (!tags.length) {
         try {
           const { id } = version;
+          console.log('trying to delete id: ', id);
           const delUrl = `DELETE /${accountType}/${owner}/packages/container/${package}/versions/${id}`;
           await github.request(delUrl);
+          console.log('after request');
           console.log(
             `successfully deleted untagged image version: ${package} (${id})`,
           );
         } catch (error) {
+          console.log('Inner error');
           console.log(
             `cannot delete untagged image version: ${package} (${id})`,
           );
