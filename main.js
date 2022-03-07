@@ -30,9 +30,8 @@ async function main() {
           );
         } catch (error) {
           console.log(
-            `failed to delete untagged image version: ${package} (${id})`,
+            `cannot delete untagged image version: ${package} (${id})`,
           );
-          core.setFailed(error.message);
         }
       }
     }
