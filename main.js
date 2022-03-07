@@ -14,26 +14,21 @@ async function main() {
     const package = packageName || repo;
     const getUrl = `GET /${accountType}/${owner}/packages/container/${package}/versions`;
     const { data: versions } = await github.request(getUrl);
-    console.log('versions: ', versions);
 
     for (const version of versions) {
       const { metadata } = version;
       const { container } = metadata;
       const { tags } = container;
-      console.log('version: ', version);
 
       if (!tags.length) {
+        const { id } = version;
         try {
-          const { id } = version;
-          console.log('trying to delete id: ', id);
           const delUrl = `DELETE /${accountType}/${owner}/packages/container/${package}/versions/${id}`;
           await github.request(delUrl);
-          console.log('after request');
           console.log(
             `successfully deleted untagged image version: ${package} (${id})`,
           );
         } catch (error) {
-          console.log('Inner error');
           console.log(
             `cannot delete untagged image version: ${package} (${id})`,
           );
@@ -41,7 +36,6 @@ async function main() {
       }
     }
   } catch (error) {
-    console.log('Main error');
     core.setFailed(error.message);
   }
 }
