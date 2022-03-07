@@ -14,11 +14,13 @@ async function main() {
     const package = packageName || repo;
     const getUrl = `GET /${accountType}/${owner}/packages/container/${package}/versions`;
     const { data: versions } = await github.request(getUrl);
+    console.log('versions: ', versions);
 
     for (const version of versions) {
       const { metadata } = version;
       const { container } = metadata;
       const { tags } = container;
+      console.log('version: ', version);
 
       if (!tags.length) {
         try {
@@ -36,6 +38,7 @@ async function main() {
       }
     }
   } catch (error) {
+    console.log('Main error');
     core.setFailed(error.message);
   }
 }
